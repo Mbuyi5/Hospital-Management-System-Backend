@@ -6,9 +6,9 @@ public class Employee {
     private List<String> languages;
 
     public Employee(EmployeeBuilder employeeBuilder){
-        this.education = employeeBuilder.education;
-        this.certification = employeeBuilder.certification;
-        this.languages = employeeBuilder.languages;
+        this.education = education;
+        this.certification = certification;
+        this.languages = languages;
     }
 
     public String getEducation() {
@@ -47,7 +47,11 @@ public class Employee {
         }
 
         public Employee build(){
-            return new Employee(this);
+            Employee emp = new Employee();
+            emp.education = education;
+            emp.certification = certification;
+            emp.languages = languages;
+            return emp;
         }
 
         public EmployeeBuilder copy(Employee employee){
