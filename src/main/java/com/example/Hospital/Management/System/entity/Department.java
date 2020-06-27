@@ -66,7 +66,7 @@ public class Department {
         }
 
         public Department build(){
-            Department dep = new Department;
+            Department dep = new Department();
             dep.departmentId = departmentId;
             dep.employeeId = employeeId;
             dep.role = role;
