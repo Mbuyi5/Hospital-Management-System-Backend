@@ -7,10 +7,10 @@ public class Department {
     private String role;
 
     public Department(DepartmentBuilder departmentBuilder){
-        this.departmentId = departmentBuilder.departmentId;
-        this.employeeId = departmentBuilder.employeeId;
-        this.ward = departmentBuilder.ward;
-        this.role = departmentBuilder.role;
+        this.departmentId = departmentId;
+        this.employeeId = employeeId;
+        this.ward = ward;
+        this.role = role;
     }
 
     public int getDepartmentId() {
@@ -66,7 +66,12 @@ public class Department {
         }
 
         public Department build(){
-            return new Department(this);
+            Department dep = new Department;
+            dep.departmentId = departmentId;
+            dep.employeeId = employeeId;
+            dep.role = role;
+            dep.ward = ward;
+            return dep;
         }
 
         public DepartmentBuilder copy(Department department){
