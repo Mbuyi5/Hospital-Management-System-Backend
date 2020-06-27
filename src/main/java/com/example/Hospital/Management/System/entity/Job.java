@@ -18,7 +18,9 @@ public class Job {
 
     @Override
     public String toString() {
-        return "Job{}";
+        return "Job{" +
+                "Job title='" + jobTitle +
+                '}';
     }
 
     public static class Builder{

@@ -12,7 +12,7 @@ public class HospitalManagementSystemApplication {
 	public static void main(String[] args) {
 
 		Person person = new Person.Builder(234324)
-				.setfName("Test").setlName("Pather")
+				.setfName("Marcell").setlName("Pather")
 				.setDate("1998/08/21")
 				.build();
 		System.out.println(person.toString());
