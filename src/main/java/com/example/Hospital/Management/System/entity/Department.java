@@ -45,6 +45,13 @@ public class Department {
         private String ward;
         private String role;
 
+        public DepartmentBuilder(int departmentId, int employeeId, String ward, String role) {
+            this.departmentId = departmentId;
+            this.employeeId = employeeId;
+            this.ward = ward;
+            this.role = role;
+        }
+
         public DepartmentBuilder setDepartmentId(int departmentId) {
             this.departmentId = departmentId;
             return this;
@@ -66,12 +73,7 @@ public class Department {
         }
 
         public Department build(){
-            Department dep = new Department();
-            dep.departmentId = departmentId;
-            dep.employeeId = employeeId;
-            dep.role = role;
-            dep.ward = ward;
-            return dep;
+            return new Department(this);
         }
 
         public DepartmentBuilder copy(Department department){

@@ -1,5 +1,7 @@
 package com.example.Hospital.Management.System.entity;
 
+import java.util.List;
+
 public class Employee {
     private String education;
     private String certification;
@@ -28,8 +30,12 @@ public class Employee {
         private String certification;
         private List<String> languages;
 
-        public EmployeeBuilder(){}
 
+        public EmployeeBuilder(String education, String certification, List<String> languages) {
+            this.education = education;
+            this.certification = certification;
+            this.languages = languages;
+        }
 
         public EmployeeBuilder setEducation(String education) {
             this.education = education;
@@ -47,11 +53,7 @@ public class Employee {
         }
 
         public Employee build(){
-            Employee emp = new Employee();
-            emp.education = education;
-            emp.certification = certification;
-            emp.languages = languages;
-            return emp;
+            return new Employee(this);
         }
 
         public EmployeeBuilder copy(Employee employee){
