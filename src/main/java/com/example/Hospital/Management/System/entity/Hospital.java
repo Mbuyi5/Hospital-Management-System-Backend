@@ -7,8 +7,10 @@ public class Hospital {
     private String hospitalName;
     private int hospitalNumber;
 
-    private Hospital(){
-
+    private Hospital(Builder builder){
+        this.hospitalId = hospitalId;
+        this.hospitalName = hospitalName;
+        this.hospitalNumber = hospitalNumber;
     }
 
     public String getHospitalId() {
@@ -38,20 +40,23 @@ public class Hospital {
         private int hospitalNumber;
 
 
-        public Builder(String hospitalId){
+        public Builder(String hospitalId, String hospitalName, int hospitalNumber) {
             this.hospitalId = hospitalId;
+            this.hospitalName = hospitalName;
+            this.hospitalNumber = hospitalNumber;
         }
-        public Hospital.Builder setHospitalName(String hospitalName) {
+
+        public Builder setHospitalName(String hospitalName) {
             this.hospitalName = hospitalName;
             return this;
         }
 
-        public Hospital.Builder setHospitalNumber(){
+        public Builder setHospitalNumber(){
             this.hospitalNumber = hospitalNumber;
             return this;
         }
 
-        public Hospital.Builder copy(Hospital hospital){
+        public Builder copy(Hospital hospital){
             this.hospitalId = hospitalId;
             this.hospitalName = hospitalName;
             this.hospitalNumber = hospitalNumber;
@@ -59,11 +64,7 @@ public class Hospital {
         }
 
         public Hospital build(){
-            Hospital hospital = new Hospital();
-            hospital.hospitalId = hospitalId;
-            hospital.hospitalName = hospitalName;
-            hospital.hospitalNumber = hospitalNumber;
-            return hospital;
+            return new Hospital(this);
         }
     }
 }

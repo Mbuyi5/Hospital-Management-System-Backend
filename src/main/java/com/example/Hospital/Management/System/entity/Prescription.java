@@ -43,7 +43,6 @@ public class Prescription {
             this.visitId = visitId;
         }
 
-        public Builder (String prescriptionId){this.prescriptionId = prescriptionId;}
         public Builder setPrescriptionId(String prescriptionID) {
             this.prescriptionId = prescriptionId;
             return this;
@@ -69,12 +68,7 @@ public class Prescription {
         }
 
         public Prescription build(){
-            Prescription prescription = new Prescription();
-
-            prescription.prescriptionId = prescriptionId;
-            prescription.medicationId = medicationId;
-            prescription.visitId = visitId;
-            return prescription;
+            return new Prescription(this);
 
         }
     }

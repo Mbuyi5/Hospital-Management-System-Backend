@@ -16,20 +16,17 @@ public class Visitation {
         this.visitDate = visitDate;
     }
 
-    private Visitation(){
-
-    }
 
     public String getVisitId() {
         return visitId;
     }
 
     public String getPatientId() {
-       return patientId;
+        return patientId;
     }
 
     public String getDoctorId() {
-       return doctorId;
+        return doctorId;
     }
 
     public String getPrescriptionId() {
@@ -37,7 +34,7 @@ public class Visitation {
     }
 
     public Date getVisitDate() {
-       return visitDate;
+        return visitDate;
     }
 
 
@@ -67,7 +64,6 @@ public class Visitation {
 
         }
 
-        public Builder (String visitId){this.visitId = visitId;}
         public Builder setVisitId(String visitId){
             this.visitId = visitId;
             return this;
@@ -94,16 +90,7 @@ public class Visitation {
         }
 
         public Visitation build(){
-            Visitation visitation = new Visitation();
-
-            visitation.visitId = visitId;
-            visitation.patientId = patientId;
-            visitation.doctorId = doctorId;
-            visitation.prescriptionId =prescriptionId;
-            visitation.visitDate = visitDate;
-            return visitation;
-
-
+            return new Visitation(this);
         }
     }
 }

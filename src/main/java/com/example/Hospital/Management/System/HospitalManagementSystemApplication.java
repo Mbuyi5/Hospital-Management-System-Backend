@@ -10,25 +10,5 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HospitalManagementSystemApplication {
 
 	public static void main(String[] args) {
-
-		Person person = new Person.Builder(234324)
-				.setfName("Marcell").setlName("Pather")
-				.setDate("1998/08/21")
-				.build();
-		System.out.println(person.toString());
-
-		Address address = new Address.Builder("25 Windsor Street")
-				.setPostcode("7850")
-				.setDetails(person)
-				.build();
-
-		System.out.println(address.toString());
-
-		Contact contact = new Contact.Builder(44332434)
-				.setHomePhone(54354543)
-				.setEmail("mpather47@gmail.com")
-				.setDetails(person)
-				.build();
-		System.out.println(contact.toString());
 	}
 }
