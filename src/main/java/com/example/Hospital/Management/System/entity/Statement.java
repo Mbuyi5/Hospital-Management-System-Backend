@@ -6,13 +6,6 @@ public class Statement {
     private Account details;
 
 
-    public Statement(int statementNum,Account details ){
-
-        this.statementNum = statementNum;
-        this.details = details;
-
-    }
-
     public Statement(Builder builder){
 
         this.statementNum = statementNum;
@@ -42,9 +35,7 @@ public class Statement {
             this.details = details;
         }
 
-        public Builder(int statementNum){
-            this.statementNum = statementNum;
-        }
+
 
         public Builder setStatement(int addrestatementNumss) {
             this.statementNum = statementNum;
