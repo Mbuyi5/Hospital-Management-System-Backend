@@ -1,12 +1,10 @@
 package com.example.Hospital.Management.System;
 
-import com.example.Hospital.Management.System.entity.Contact;
-import com.example.Hospital.Management.System.entity.Person;
-import com.example.Hospital.Management.System.entity.Address;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.Hospital.Management.System.entity.*;
+//import org.springframework.boot.SpringApplication;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class HospitalManagementSystemApplication {
 
 	public static void main(String[] args) {
@@ -30,5 +28,24 @@ public class HospitalManagementSystemApplication {
 				.setDetails(person)
 				.build();
 		System.out.println(contact.toString());
+
+		Account account = new Account();
+		account.setAccountId("153 6754 654");
+		account.setBalance(2000000.00);
+		account.setPaymentMethod("Card payment");
+
+		System.out.println(account.toString());
+
+		Invoice invoice = new Invoice();
+		invoice.setInvoiceNum(876-87656-765);
+		invoice.setDetails(account);
+
+		System.out.println(invoice.toString());
+
+		Statement statement = new Statement();
+		statement.setStatementNum(7454);
+		statement.setDetails(account);
+
+		System.out.println(statement.toString());
 	}
 }
