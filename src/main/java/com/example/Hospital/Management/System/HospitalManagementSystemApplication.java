@@ -14,6 +14,7 @@ public class HospitalManagementSystemApplication {
 				.setDate("1998/08/21")
 				.build();
 		System.out.println(person.toString());
+		
 
 		Address address = new Address.Builder("25 Windsor Street")
 				.setPostcode("7850")
@@ -47,5 +48,6 @@ public class HospitalManagementSystemApplication {
 		statement.setDetails(account);
 
 		System.out.println(statement.toString());
+
 	}
 }

@@ -1,16 +1,20 @@
 package com.example.Hospital.Management.System.entity;
 
+import java.util.Calendar;
+
 public class Account {
 
     private String accountId;
     private double balance;
     private String paymentMethod;
 
-    public Account(String accountId, double balance, String paymentMethod){
+    public Account(Builder builder) {
         this.accountId = accountId;
         this.balance = balance;
         this.paymentMethod = paymentMethod;
+
     }
+
 
     public Account(){
 
@@ -39,4 +43,52 @@ public class Account {
 
         return "Account" + "  accountId:  " + accountId + "  " + "  balance:  " + balance + " " + " paymentMethod  " + paymentMethod ;
     }
+
+    public static class Builder{
+        private String accountId;
+        private double balance;
+        private String paymentMethod;
+
+        public Builder(String accountId, double balance, String paymentMethod) {
+            this.accountId = accountId;
+            this.balance = balance;
+            this.paymentMethod  = paymentMethod;
+
+        }
+
+        public Builder(String accountId) {
+            this.accountId = accountId;
+        }
+
+        public Builder setAccountId(String accountId) {
+            this.accountId = accountId;
+            return this;
+        }
+
+        public Builder setfBalance(double balance) {
+            this.balance = balance;
+            return this;
+        }
+
+        public Builder setlPaymentMethod(String paymentMethod) {
+            this.paymentMethod = paymentMethod;
+            return this;
+        }
+
+        public Builder copy(Account account){
+            this.accountId = accountId;
+            this.balance = balance;
+            this.paymentMethod = paymentMethod;
+            return this;
+        }
+
+        public Account build(){
+            Account account = new Account();
+            account.accountId = accountId;
+            account.balance = balance;
+            account.paymentMethod = paymentMethod;
+            return account;
+        }
+    }
+
 }
