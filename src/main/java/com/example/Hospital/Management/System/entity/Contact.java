@@ -8,16 +8,14 @@ public class Contact {
 
 
 
-    public Contact(int cellphoneNo, int homePhone, String email, Person details) {
+    public Contact(Builder builder) {
         this.cellphoneNo = cellphoneNo;
         this.homePhone = homePhone;
         this.email = email;
         this.details = details;
     }
 
-    private Contact(){
 
-    }
 
     public int getCellphoneNo() {
         return cellphoneNo;
@@ -50,9 +48,14 @@ public class Contact {
         private String email;
         private Person details;
 
-        public Builder(int cellphoneNo){
+        public Builder(int cellphoneNo, int homePhone, String email, Person details) {
             this.cellphoneNo = cellphoneNo;
+            this.homePhone = homePhone;
+            this.email = email;
+            this.details = details;
         }
+
+
         public Builder setCellphoneNo(int cellphoneNo) {
             this.cellphoneNo = cellphoneNo;
             return this;
@@ -81,13 +84,7 @@ public class Contact {
         }
 
         public Contact build(){
-            Contact contact = new Contact();
-
-            contact.cellphoneNo = cellphoneNo;
-            contact.homePhone = homePhone;
-            contact.email = email;
-            contact.details = details;
-            return contact;
+            return new Contact(this);
         }
     }
 }

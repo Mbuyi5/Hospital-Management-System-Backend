@@ -7,8 +7,10 @@ public class Room {
     private List equipment;
     private Hospital details;
 
-    private Room(){
-
+    private Room(Builder builder){
+        this.roomId = roomId;
+        this.equipment = equipment;
+        this.details =details;
     }
 
     public String getroomId() {
@@ -38,20 +40,23 @@ public class Room {
         private Hospital details;
 
 
-        public Builder(String roomId){
+        public Builder(String roomId, List equipment, Hospital details) {
             this.roomId = roomId;
+            this.equipment = equipment;
+            this.details = details;
         }
-        public Room.Builder setEquipment(List equipment) {
+
+        public Builder setEquipment(List equipment) {
             this.equipment = equipment;
             return this;
         }
 
-        public Room.Builder setDetails(Hospital details) {
+        public Builder setDetails(Hospital details) {
             this.details = details;
             return this;
         }
 
-        public Room.Builder copy(Room room){
+        public Builder copy(Room room){
             this.roomId = roomId;
             this.equipment = equipment;
             this.details =details;
@@ -59,11 +64,7 @@ public class Room {
         }
 
         public Room build(){
-            Room room = new Room();
-            room.roomId = roomId;
-            room.equipment = equipment;
-            room.details = details;
-            return room;
+            return new Room(this);
         }
     }
 }
