@@ -15,20 +15,18 @@ public class Account {
 
     }
 
-    public Account(String accountId){
-
-    }
-
     public String getAccountId() { return accountId; }
 
     public double getBalance() { return balance; }
 
     public String getPaymentMethod() { return paymentMethod; }
 
-
+    @Override
     public String toString(){
 
-        return "Account" + "  accountId:  " + accountId + "  " + "  balance:  " + balance + " " + " paymentMethod  " + paymentMethod ;
+        return "Account" + "  accountId:  " + accountId
+                + "  " + "  balance:  " + balance
+                + " " + " paymentMethod  " + paymentMethod ;
     }
 
     public static class Builder{
@@ -36,7 +34,7 @@ public class Account {
         private double balance;
         private String paymentMethod;
 
-        public Builder(String accountId) {
+        public Builder(String accountId,double balance,String paymentMethod) {
             this.accountId = accountId;
             this.balance = balance;
             this.paymentMethod  = paymentMethod;

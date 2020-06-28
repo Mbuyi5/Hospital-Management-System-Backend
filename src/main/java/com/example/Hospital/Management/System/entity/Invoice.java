@@ -18,7 +18,7 @@ public class Invoice {
 
    public Account getDetails(){ return details; }
 
-
+    @Override
     public String toString(){
 
 
@@ -58,7 +58,6 @@ public class Invoice {
             return new Invoice(this);
 
         }
-
     }
 
 }
