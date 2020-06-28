@@ -16,8 +16,10 @@ public class Invoice {
 
     public long getInvoiceNum() { return invoiceNum; }
 
+
    public Account getDetails(){ return details; }
 
+ 
     @Override
     public String toString(){
 

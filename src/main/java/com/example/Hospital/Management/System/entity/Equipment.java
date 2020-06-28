@@ -8,8 +8,12 @@ public class Equipment {
     private Room details;
 
 
-    private Equipment(){
-
+    public Equipment(Builder builder){
+        this.equipment = equipment;
+        this.name = name;
+        this.desc = desc;
+        this.quantity = quantity;
+        this.details =details;
     }
 
     public String getEquipment() {
@@ -51,6 +55,15 @@ public class Equipment {
         public Builder(String equipment){
             this.equipment = equipment;
         }
+
+        public Builder(String equipment, String name, String desc, int quantity, Room details) {
+            this.equipment = equipment;
+            this.name = name;
+            this.desc = desc;
+            this.quantity = quantity;
+            this.details = details;
+        }
+
         public Builder setName(String name) {
             this.name = name;
             return this;
@@ -80,14 +93,7 @@ public class Equipment {
         }
 
         public Equipment build(){
-            Equipment equipmentOne = new Equipment();
-
-            equipmentOne.equipment = equipment;
-            equipmentOne.name = name;
-            equipmentOne.desc = desc;
-            equipmentOne.quantity = quantity;
-            equipmentOne.details = details;
-            return equipmentOne;
+            return new Equipment(this);
         }
     }
 }

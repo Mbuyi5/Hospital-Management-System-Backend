@@ -10,9 +10,7 @@ public class Address {
         this.postcode = postcode;
         this.details = details;
     }
-    private Address(){
 
-    }
 
     public String getAddress() {
         return address;
@@ -43,9 +41,12 @@ public class Address {
         private String postcode;
         private Person details;
 
-        public Builder(String address){
+        public Builder(String address, String postcode, Person details) {
             this.address = address;
+            this.postcode = postcode;
+            this.details = details;
         }
+
         public Builder setAddress(String address) {
             this.address = address;
             return this;
@@ -69,12 +70,8 @@ public class Address {
         }
 
         public Address build(){
-            Address address1 = new Address();
 
-            address1.address = address;
-            address1.postcode = postcode;
-            address1.details = details;
-            return address1;
+            return new Address(this);
 
         }
 

@@ -1,7 +1,6 @@
 package com.example.Hospital.Management.System.entity;
 
 
-
 public class Account {
 
     private String accountId;

@@ -54,9 +54,6 @@ public class Person {
             this.date = date;
         }
 
-        public Builder(int personId) {
-            this.personId = personId;
-        }
 
         public Builder setPersonId(int personId) {
             this.personId = personId;
@@ -87,12 +84,7 @@ public class Person {
         }
 
         public Person build(){
-            Person person = new Person();
-            person.personId = personId;
-            person.fName = fName;
-            person.lName = lName;
-            person.date = date;
-            return person;
+            return new Person(this);
         }
     }
 }

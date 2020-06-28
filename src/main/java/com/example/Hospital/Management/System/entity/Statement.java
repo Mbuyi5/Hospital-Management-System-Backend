@@ -5,7 +5,6 @@ public class Statement {
     private int statementNum;
     private Account details;
 
-
     public Statement(Builder builder){
 
         this.statementNum = statementNum;
@@ -22,7 +21,6 @@ public class Statement {
 
 
     public String toString(){
-
         return "Statement" + "  statementNum: " + statementNum + " details: " + details  ;
     }
 
@@ -34,8 +32,6 @@ public class Statement {
             this.statementNum = statementNum;
             this.details = details;
         }
-
-
 
         public Builder setStatement(int addrestatementNumss) {
             this.statementNum = statementNum;
