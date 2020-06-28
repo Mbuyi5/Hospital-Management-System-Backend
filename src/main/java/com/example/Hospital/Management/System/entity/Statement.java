@@ -7,25 +7,26 @@ public class Statement {
 
 
     public Statement(int statementNum,Account details ){
+
         this.statementNum = statementNum;
         this.details = details;
 
     }
 
-    public Statement(){
+    public Statement(Builder builder){
 
+        this.statementNum = statementNum;
+        this.details = details;
 
     }
 
     public int getStatementNum() { return statementNum; }
 
-    public void setStatementNum(int statementNum) {
-        this.statementNum = statementNum;
-    }
-    public void setDetails(Account details) {
-        this.details = details;
+    public Account getDetails() {
 
-    }
+        return details; }
+
+
 
     public String toString(){
 
@@ -44,6 +45,7 @@ public class Statement {
         public Builder(int statementNum){
             this.statementNum = statementNum;
         }
+
         public Builder setStatement(int addrestatementNumss) {
             this.statementNum = statementNum;
             return this;
@@ -62,10 +64,7 @@ public class Statement {
 
         public Statement build(){
 
-            Statement statement1 = new Statement();
-            statement1.statementNum = statementNum;
-            statement1.details = details;
-            return statement1;
+            return new Statement(this);
 
         }
     }

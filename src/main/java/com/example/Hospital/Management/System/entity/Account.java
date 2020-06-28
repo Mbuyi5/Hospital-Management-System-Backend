@@ -15,8 +15,7 @@ public class Account {
 
     }
 
-
-    public Account(){
+    public Account(String accountId){
 
     }
 
@@ -26,18 +25,6 @@ public class Account {
 
     public String getPaymentMethod() { return paymentMethod; }
 
-
-    public void setAccountId(String accountId) {
-        this.accountId = accountId;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
-    }
 
     public String toString(){
 
@@ -49,15 +36,11 @@ public class Account {
         private double balance;
         private String paymentMethod;
 
-        public Builder(String accountId, double balance, String paymentMethod) {
+        public Builder(String accountId) {
             this.accountId = accountId;
             this.balance = balance;
             this.paymentMethod  = paymentMethod;
 
-        }
-
-        public Builder(String accountId) {
-            this.accountId = accountId;
         }
 
         public Builder setAccountId(String accountId) {
@@ -65,12 +48,12 @@ public class Account {
             return this;
         }
 
-        public Builder setfBalance(double balance) {
+        public Builder setBalance(double balance) {
             this.balance = balance;
             return this;
         }
 
-        public Builder setlPaymentMethod(String paymentMethod) {
+        public Builder setPaymentMethod(String paymentMethod) {
             this.paymentMethod = paymentMethod;
             return this;
         }
@@ -83,11 +66,8 @@ public class Account {
         }
 
         public Account build(){
-            Account account = new Account();
-            account.accountId = accountId;
-            account.balance = balance;
-            account.paymentMethod = paymentMethod;
-            return account;
+
+            return new Account(this);
         }
     }
 
